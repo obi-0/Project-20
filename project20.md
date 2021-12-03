@@ -34,7 +34,7 @@ CONNECTING TO THE MYSQL DOCKER CONTAINER
 
 The MYSQL server container can be connected directly or through another container running MYSQL client.
 
-1st Approach:
+#### 1st Approach:
 
 Connecting directly to the container running the MySQL server:
 
@@ -43,3 +43,13 @@ Connecting directly to the container running the MySQL server:
 
 ![mysql](images/mysql.JPG)
 
+
+#### 2nd Approach:
+
+#### Create a network
+
+docker network create --subnet=172.18.0.0/24 tooling_app_network
+
+Create an environment variable to store the root password:
+
+export MYSQL_PW=password1
