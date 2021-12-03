@@ -48,11 +48,11 @@ Connecting directly to the container running the MySQL server:
 
 #### Create a network
 
-docker network create --subnet=172.18.0.0/24 tooling_app_network
+    docker network create --subnet=172.18.0.0/24 tooling_app_network
 
 Create an environment variable to store the root password:
 
-export MYSQL_PW=password1
+    export MYSQL_PW=password1
 
 Pull the image and run the container:
 
@@ -65,14 +65,15 @@ Pull the image and run the container:
 
 Create a ‘create_user.sql’ file then enter the code below
 
-CREATE USER ''@'%' IDENTIFIED BY ''; GRANT ALL PRIVILEGES ON * . * TO ''@'%';
+    CREATE USER ''@'%' IDENTIFIED BY ''; GRANT ALL PRIVILEGES ON * . * TO ''@'%';
 
 Run the script 
-docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < ./create_user.sql
+
+    docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < ./create_user.sql
 
 Run the MySQL client container:
 
-docker run --network tooling_app_network --name mysql-client -it --rm mysql mysql -h mysqlserverhost -u  -p
+    docker run --network tooling_app_network --name mysql-client -it --rm mysql mysql -h mysqlserverhost -u  -p
 
 
 #### Prepare Database Schema
