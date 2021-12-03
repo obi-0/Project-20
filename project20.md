@@ -53,3 +53,10 @@ docker network create --subnet=172.18.0.0/24 tooling_app_network
 Create an environment variable to store the root password:
 
 export MYSQL_PW=password1
+
+Pull the image and run the container:
+
+    docker run --network tooling_app_network -h mysqlserverhost --name=mysql-server -e MYSQL_ROOT_PASSWORD=$MYSQL_PW -d mysql/mysql-server:latest
+
+
+![dokernwk](images/dokernwk.JPG)
