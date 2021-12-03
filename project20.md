@@ -93,6 +93,8 @@ Use the SQL script to create the database and prepare the schema
     docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < $tooling_db_schema
 
 
+![toolingdb](images/toolingdb.JPG)
+
 
 
 Update the db_conn.php file with connection details to the database
