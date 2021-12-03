@@ -1,6 +1,6 @@
 MIGRATION TO THE CLOUD AND CONTAINERIZATION PART 1: DOCKER AND DOCKER COMPOSE
 
-Install Docker and prepare for migration to the Cloud
+#### Install Docker and prepare for migration to the Cloud
 
 Installed Docker engine on my Ubuntu server.
 
@@ -11,3 +11,9 @@ Installed Docker engine on my Ubuntu server.
 
 ![docker](images/docker.JPG)
 
+
+MySQL in container
+
+Pull MySQL Docker image from Docker Hub
+
+    docker pull mysql/mysql-server:latest
