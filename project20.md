@@ -76,5 +76,5 @@ Run the MySQL client container:
     docker run --network tooling_app_network --name mysql-client -it --rm mysql mysql -h mysqlserverhost -u  -p
 
 
-#### Prepare Database Schema
+### Prepare Database Schema
 
