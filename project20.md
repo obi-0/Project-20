@@ -73,3 +73,7 @@ docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < ./create_user.sql
 Run the MySQL client container:
 
 docker run --network tooling_app_network --name mysql-client -it --rm mysql mysql -h mysqlserverhost -u  -p
+
+
+#### Prepare Database Schema
+
