@@ -17,3 +17,6 @@ MySQL in container
 Pull MySQL Docker image from Docker Hub
 
     docker pull mysql/mysql-server:latest
+
+![pullmysql](images/pullmysql.JPG)
+
