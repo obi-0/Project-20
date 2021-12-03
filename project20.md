@@ -60,3 +60,16 @@ Pull the image and run the container:
 
 
 ![dokernwk](images/dokernwk.JPG)
+
+
+
+Create a ‘create_user.sql’ file then enter the code below
+
+CREATE USER ''@'%' IDENTIFIED BY ''; GRANT ALL PRIVILEGES ON * . * TO ''@'%';
+
+Run the script 
+docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < ./create_user.sql
+
+Run the MySQL client container:
+
+docker run --network tooling_app_network --name mysql-client -it --rm mysql mysql -h mysqlserverhost -u  -p
