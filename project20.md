@@ -30,3 +30,16 @@ Deploy the MySQL Container
 ![runmysql](images/runmysql.JPG)
 
 
+CONNECTING TO THE MYSQL DOCKER CONTAINER
+
+The MYSQL server container can be connected directly or through another container running MYSQL client.
+
+1st Approach:
+
+Connecting directly to the container running the MySQL server:
+
+    docker exec -it quizzical_chaum mysql -uroot -p
+
+
+![mysql](images/mysql.JPG)
+
