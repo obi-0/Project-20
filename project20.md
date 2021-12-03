@@ -107,6 +107,10 @@ Build the Docker image. In the tooling directory, run the Dockerfile
 
     docker build -t tooling:0.0.1 .
 
+
+![dockerbld](images/dockerbld.JPG)
+
+
 Run the container
 
     docker run --network tooling_app_network -p 8085:80 -it tooling:0.0.1
