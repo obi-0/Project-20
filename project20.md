@@ -109,6 +109,8 @@ Build the Docker image. In the tooling directory, run the Dockerfile
 
 
 ![dockerbld](images/dockerbld.JPG)
+![dockerbld1](images/dockerbld1.JPG)
+
 
 
 Run the container
