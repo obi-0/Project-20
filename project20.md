@@ -20,3 +20,13 @@ Pull MySQL Docker image from Docker Hub
 
 ![pullmysql](images/pullmysql.JPG)
 
+
+Run command below to list image downloaded
+Deploy the MySQL Container
+
+    docker run -e MYSQL_ROOT_PASSWORD=password1 -d mysql/mysql-server:latest
+
+
+![runmysql](images/runmysql.JPG)
+
+
