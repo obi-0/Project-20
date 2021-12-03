@@ -78,3 +78,34 @@ Run the MySQL client container:
 
 ### Prepare Database Schema
 
+Setup a database schema to allow the tooling application to connect to the database server.
+
+Clone the tooling app repository
+
+    git clone https://github.com/darey-devops/tooling.git
+
+Export the location of the SQL file
+
+    export tooling_db_schema=./tooling/html/tooling_db_schema.sql
+
+Use the SQL script to create the database and prepare the schema
+
+    docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < $tooling_db_schema
+
+
+
+
+Update the db_conn.php file with connection details to the database
+
+    $servername = "mysqlserverhost"; $username = ""; $password = ""; $dbname = "toolingdb"; 
+
+Run the Tooling app
+
+Build the Docker image. In the tooling directory, run the Dockerfile
+
+    docker build -t tooling:0.0.1 .
+
+Run the container
+
+    docker run --network tooling_app_network -p 8085:80 -it tooling:0.0.1
+
