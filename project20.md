@@ -101,6 +101,9 @@ Update the db_conn.php file with connection details to the database
 
     $servername = "mysqlserverhost"; $username = ""; $password = ""; $dbname = "toolingdb"; 
 
+![db_conn](images/db_conn.JPG)
+
+
 Run the Tooling app
 
 Build the Docker image. In the tooling directory, run the Dockerfile
