@@ -106,6 +106,34 @@ Update the db_conn.php file with connection details to the database
 
 Run the Tooling app
 
+Containerization of an application starts with creation of a file with a special name - 'Dockerfile'.
+
+The Dockerfile can be considered as an instruction to the Docker on how to package application in a container.
+
+In the tooling directory, open the Dockerfile and enter the code below:
+
+FROM php:7.4.24-apache-buster
+LABEL Dare=dare@zooto.io
+
+RUN apt-get update --fix-missing && apt-get install -y \
+    default-mysql-client
+    
+RUN docker-php-ext-install pdo_mysql 
+RUN docker-php-ext-install mysqli
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
+COPY start-apache /usr/local/bin
+RUN a2enmod rewrite
+
+# Copy application source
+ADD html/. /var/www
+RUN chown -R www-data:www-data /var/www
+
+CMD ["start-apache"]
+
+![dfile](images/dfile.JPG)
+
+
+
 Build the Docker image. In the tooling directory, run the Dockerfile
 
     docker build -t tooling:0.0.1 .
