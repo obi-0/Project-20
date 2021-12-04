@@ -104,7 +104,7 @@ Update the db_conn.php file with connection details to the database
 ![db_conn](images/db_conn.JPG)
 
 
-Run the Tooling app
+#### Run the Tooling app
 
 Containerization of an application starts with creation of a file with a special name - 'Dockerfile'.
 
