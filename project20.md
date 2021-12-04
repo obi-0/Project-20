@@ -106,7 +106,7 @@ Update the db_conn.php file with connection details to the database
 
 #### Run the Tooling app
 
-Containerization of an application starts with creation of a file with a special name - 'Dockerfile'.
+Containerization of an application starts with the creation of a file with a special name - 'Dockerfile'.
 
 The Dockerfile can be considered as an instruction to the Docker on how to package application in a container.
 
@@ -149,6 +149,10 @@ Build the Docker image. In the tooling directory, run the Dockerfile
 ![dockerbld](images/dockerbld.JPG)
 ![dockerbld1](images/dockerbld1.JPG)
 
+
+In the above command,  -t parameter was used to tag the image tooling"0.0.1 
+
+The parameter instructs Docker to locate the Dockerfile in the directory where the command is run. 
 
 
 Run the container
