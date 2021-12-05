@@ -159,3 +159,17 @@ Run the container
 
     docker run --network tooling_app_network -p 8085:80 -it tooling:0.0.1
 
+### Deploy Tooling app using Docker Compose
+
+Run this command to download the current stable release of Docker Compose:
+
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+Apply executable permissions to the binary:
+
+    sudo chmod +x /usr/local/bin/docker-compose
+
+Test the installation.
+
+![dcversion](images/dcversion.JPG)
+
