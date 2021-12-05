@@ -229,7 +229,7 @@ Entered http://localhost:8085 on my web browser
 
 
 ![localhost](images/localhost.JPG)
-![lh](images/lh.JPG)
+       ![lh](images/lh.JPG)
 
 
 ### Practice Task №1 – Implement a POC to migrate the PHP-Todo app into a containerized application.
