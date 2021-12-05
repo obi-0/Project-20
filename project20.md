@@ -215,3 +215,11 @@ Create a .env file to reference the variables in the tooling.yml file, then ente
 ![env](images/env.JPG)
 
 
+Run the command below to start the container
+
+
+docker-compose -f tooling.yaml  up -d
+
+
+![docker-compose](images/docker-compose.JPG)
+
