@@ -229,5 +229,7 @@ Entered http://localhost:8085 on my web browser
 
 
 ![localhost](images/localhost.JPG)
+![lh](images/lh.JPG)
+
 
 
