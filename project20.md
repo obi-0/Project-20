@@ -232,7 +232,7 @@ Entered http://localhost:8085 on my web browser
        
 
 
-### Practice Task №1 – Implement a POC to migrate the PHP-Todo app into a containerized application.
+### Implement a POC to migrate the PHP-Todo app into a containerized application.
 
 Clone the php-todo repo https://github.com/obi-0/php-todo
 In the php-todo directory, write a Docker file for the php-todo app.
