@@ -223,3 +223,11 @@ docker-compose -f tooling.yaml  up -d
 
 ![docker-compose](images/docker-compose.JPG)
 
+
+
+Entered http://localhost:8085 on my web browser
+
+
+![localhost](images/localhost.JPG)
+
+
