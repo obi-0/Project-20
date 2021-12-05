@@ -173,3 +173,45 @@ Test the installation.
 
 ![dcversion](images/dcversion.JPG)
 
+
+Create a file – tooling.yaml
+Enter the code below into the file to represent the application deployment
+
+    version: "3.9"
+
+    services:
+
+    db:
+    image: mysql/mysql-server:latest
+    environment:
+      MYSQL_DATABASE: "${DB_DATABASE}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+    ports:
+      - "${DB_PORT}:3306"
+    volumes:
+      - db:/var/lib/mysql
+
+    app:
+    build:
+      context: .
+    container_name: tooling-website
+    restart: unless-stopped
+    volumes:
+      - ~/html/.:/var/www/html
+    ports:
+      - "${APP_PORT}:80"
+    links:
+      - db
+    depends_on:
+      - db
+  
+    volumes:
+    db:
+
+Create a .env file to reference the variables in the tooling.yml file, then enter the database variables as shown below.
+
+![env](images/env.JPG)
+
+
