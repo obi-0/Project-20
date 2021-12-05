@@ -260,7 +260,13 @@ In the php-todo directory, write a Docker file for the php-todo app.
     ENTRYPOINT ["sh", "serve.sh"]
 
 
+ Run both database and app on my local Docker Engine
+
+
  
+Access application from my browser
+
+
 
 
  #### Part 2
