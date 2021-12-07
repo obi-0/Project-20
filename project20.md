@@ -225,7 +225,7 @@ docker-compose -f tooling.yaml  up -d
 
 
 
-Entered http://localhost:8085 on my web browser
+Opened http://localhost:8085 on my Ubuntu web browser (virtual box)
 
 
 ![localhost](images/localhost.JPG)
