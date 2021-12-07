@@ -332,7 +332,12 @@ Update the .env file
 ![php-env](images/php-env.JPG)
 
  
-Access application from my browser
+ Build image by running the command below:
+
+docker build -t php-todo:latest .
+
+![docker-build](images/docker-build.JPG)
+
 
 
 
