@@ -334,7 +334,7 @@ Update the .env file
  
  Build image by running the command below:
 
-docker build -t php-todo:latest .
+    docker build -t php-todo:latest .
 
 ![docker-build](images/docker-build.JPG)
 
@@ -356,7 +356,7 @@ Create a docker repository
 
 Create tag for the image
 
-docker tag php-todo:latest obi007/php-todo:1.0.0
+    docker tag php-todo:latest obi007/php-todo:1.0.0
 
 
 Run command to login to dockerhub 
