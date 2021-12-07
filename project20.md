@@ -340,19 +340,19 @@ docker build -t php-todo:latest .
 
 
 
-
-
- #### Part 2
-
 Create an account in Docker Hub
 
 ![dockerhub](images/dockerhub.JPG)
 
 
+Run command to deploy containers:
+
+![php-deploy](images/php-deploy.JPG)
+
+
 Create a docker repository
 
 ![phpt-dhub](images/phpt-dhub.JPG)
-
 
 
 
