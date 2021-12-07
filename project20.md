@@ -285,6 +285,47 @@ start-apache file should look like this
 
 ![start-apache](images/start-apache.JPG)
 
+Create a docker-compose.yml and enter the code below:
+
+    version: "3.9"
+    services:
+    app:
+    build:
+      context: .
+    container_name: php-website
+    network_mode: tooling_app_network
+    restart: unless-stopped
+    volumes:
+      - app:/php-todo
+    ports:
+      - "${APP_PORT}:80"
+    depends_on:
+      - db
+
+    db:
+    image: mysql/mysql-server:latest
+    container_name: php-db-server
+    network_mode: tooling_app_network
+    hostname: "${DB_HOSTNAME}"
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: "${DB_DATABASE}"
+      MYSQL_USER: "${DB_USERNAME}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+    
+    ports:
+      - "${DB_PORT}:3306"
+
+    volumes:
+      - db:/var/lib/mysql
+
+    volumes:
+    app:
+    db:
+
+![php-dcompose](images/php-dcompose.JPG)
+
 
  
 Access application from my browser
