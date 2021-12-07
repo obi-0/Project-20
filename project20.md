@@ -2,7 +2,7 @@
 
 #### Install Docker and prepare for migration to the Cloud
 
-Installed Docker engine on my Ubuntu server.
+Installed Docker engine on my Ubuntu server - VirtualBox.
 
     sudo apt-get update
 
@@ -225,7 +225,7 @@ docker-compose -f tooling.yaml  up -d
 
 
 
-Opened http://localhost:8085 on my Ubuntu web browser (virtual box)
+Opened http://localhost:8085 on my Ubuntu web browser (VirtualBox)
 
 
 ![localhost](images/localhost.JPG)
