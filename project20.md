@@ -368,6 +368,7 @@ Pushed docker image to my dockerhub repository
 ![docker-push](images/docker-push.JPG)
 
 
+![docker-image](images/docker-image.JPG)
 
 
 
