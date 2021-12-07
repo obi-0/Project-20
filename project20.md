@@ -268,7 +268,7 @@ In the php-todo directory, write a Docker file for the php-todo app.
 
     CMD ["start-apache"]
 
-
+![php-dockerfile](images/php-dockerfile.JPG)
 
 
  Run both database and app on my local Docker Engine
