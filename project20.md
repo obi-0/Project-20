@@ -327,6 +327,10 @@ Create a docker-compose.yml and enter the code below:
 ![php-dcompose](images/php-dcompose.JPG)
 
 
+Update the .env file
+
+![php-env](images/php-env.JPG)
+
  
 Access application from my browser
 
