@@ -339,20 +339,34 @@ docker build -t php-todo:latest .
 ![docker-build](images/docker-build.JPG)
 
 
+Run command to deploy containers:
+
+![php-deploy](images/php-deploy.JPG)
+
 
 Create an account in Docker Hub
 
 ![dockerhub](images/dockerhub.JPG)
 
 
-Run command to deploy containers:
-
-![php-deploy](images/php-deploy.JPG)
-
-
 Create a docker repository
 
 ![phpt-dhub](images/phpt-dhub.JPG)
+
+
+Create tag for the image
+
+docker tag php-todo:latest obi007/php-todo:1.0.0
+
+
+Run command to login to dockerhub 
+
+![docker-login](images/docker-login.JPG)
+
+Pushed docker image to my dockerhub repository
+
+![docker-push](images/docker-push.JPG)
+
 
 
 
