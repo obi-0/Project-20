@@ -2,6 +2,8 @@
 
 #### Install Docker and prepare for migration to the Cloud
 
+Step 1:
+
 Installed Docker engine on my Linux (Ubuntu) server.
 
     sudo apt-get update
@@ -12,7 +14,7 @@ Installed Docker engine on my Linux (Ubuntu) server.
 ![docker](images/docker.JPG)
 
 
-MySQL in container
+Step 2:
 
 Pull MySQL Docker image from Docker Hub
 
@@ -20,6 +22,8 @@ Pull MySQL Docker image from Docker Hub
 
 ![pullmysql](images/pullmysql.JPG)
 
+
+Step 3:
 
 Run command below to list image downloaded
 Deploy the MySQL Container
