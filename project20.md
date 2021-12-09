@@ -228,7 +228,7 @@ docker-compose -f tooling.yaml  up -d
 Open http://localhost:8085 on web browser
 
 
-
+![localhost](images/localhost.JPG)
        
 
 
