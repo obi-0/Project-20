@@ -472,7 +472,7 @@ Create Jenkinsfile for Docker build and push to registry
 
 ![dhub-push](images/dhub-push.JPG)
 
-Deployment with Docker Compose
+#### Deployment with Docker Compose
 
 •	Install docker compose 
 
