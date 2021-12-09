@@ -458,3 +458,14 @@ Create Jenkinsfile for Docker build and push to registry
    
     
 
+•	Connect GitHub repository to Jenkins
+
+•	Create a multibranch pipeline
+
+•	Simulate a Docker push
+
+
+![jenkins-push](images/jenkins-push.JPG)
+
+
+![dhub-push](images/dhub-push.JPG)
