@@ -535,3 +535,71 @@ environment is used to pass environment variables required for the service runni
 
 
 
+Update Jenkinsfile with a test stage before pushing image to the registry.
+
+•	Create a job in Jenkins
+
+•	Update Jenkinsfile
+
+
+    pipeline {
+    
+    agent any
+    
+    environment {
+        dockerImage = ''
+        registry = 'obi007/tooling'
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/obi-0/docker-php-todo.git']]])
+            }
+        }
+        
+        stage('Build image') {
+            steps {
+          sh "docker build -t obi007/tooling:1.0 ."
+        }
+      }
+      stage('Push Docker image') {
+        steps {
+            withCredentials([string(credentialsId: 'docker-pwd', variable: 'DockerHubPwd')]) {
+              sh "docker login -u obi007 -p ${DockerHubPwd}"
+           }
+           sh "docker push obi007/tooling:1.0"
+   
+        }    
+      }
+      stage("Start the app") {
+          steps {
+              sh "docker-compose up -d"
+       }
+      }
+      stage("Test endpoint") {
+          steps {
+              script {
+                  while (true) {
+                      def response = httpRequest 'http://localhost:8000'
+                      if (response.status == 200) {
+                          withCredentials([string(credentialsId: 'docker-pwd', variable: 'DockerHubPwd')]) {
+                              sh "docker login -u obi007 -p ${DockerHubPwd}"
+                          }
+                              sh "docker push obi007/tooling:1.0"
+            }
+            break
+         }
+        }
+      }
+    }
+    stage ("Remove images") {
+      steps {
+          sh "docker system prune -af"
+       }
+      }
+     }
+    } 
+ 
+   
+
