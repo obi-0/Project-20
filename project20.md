@@ -229,7 +229,7 @@ docker-compose -f tooling.yaml  up -d
 
 
 
-Open http://localhost:8085 on web browser
+Open the URL http://localhost:8085 on web browser
 
 
 ![webpage](images/webpage.JPG)
@@ -363,7 +363,7 @@ Create a docker repository
 ![phpt-dhub](images/phpt-dhub.JPG)
 
 
-Create tag for the image
+Create a tag for the image
 
     docker tag php-todo:latest obi007/php-todo:1.0.0
 
@@ -383,16 +383,14 @@ Pushed docker image to my dockerhub repository
 
 #### Part 3
 
-1.	Write a Jenkinsfile that will simulate a Docker Build and a Docker Push to the registry
+1.	Write a Jenkinsfile that will simulate a Docker Build and a Docker Push to the registry.
 
-2.	Connect repository to Jenkins
-3.	Create a multi-branch pipeline
-4.	Simulate a CI pipeline from a feature and master branch using previously created Jenkinsfile
+2.	Connect repository to Jenkins.
+3.	Create a multi-branch pipeline.
+4.	Simulate a CI pipeline from a feature and master branch using previously created Jenkinsfile.
 5.	Ensure that the tagged images from your Jenkinsfile have a prefix that suggests which branch the image was pushed from. 
 6.	Verify that the images pushed from the CI can be found at the registry.
 
-
-Installations:
 
 Install docker engine
           
@@ -411,9 +409,9 @@ Run command below to install Jenkins
     sudo apt-get update
     sudo apt-get install jenkins
 
-Setup Jenkinsfile Pipeline
+#### Setup Jenkinsfile Pipeline
 
-Installed the following plugins:
+First, install the following plugins in Jenkins
 
 •	Blue Ocean
 
@@ -476,7 +474,15 @@ Create Jenkinsfile for Docker build and push to registry
 
 Deployment with Docker Compose
 
-•	Installed docker compose on Linux server
+•	Install docker compose 
+
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+Set the correct permissions so that the docker-compose command is executable:
+
+    sudo chmod +x /usr/local/bin/docker-compose
+
+
 
 •	Create a tooling.yaml file and enter the code below
 
@@ -505,7 +511,7 @@ Deployment with Docker Compose
     tooling_frontend:
     db:
 
-Run the command to start containers
+Run command to start containers
 
     docker-compose -f tooling.yaml  up -d 
 
