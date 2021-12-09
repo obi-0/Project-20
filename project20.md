@@ -501,12 +501,37 @@ Deployment with Docker Compose
     tooling_frontend:
     db:
 
-Run the command below to start the containers
+Run the command to start containers
 
     docker-compose -f tooling.yaml  up -d 
 
 
 ![toolingyml](images/toolingyml.JPG)
+
+
+#### Complete Continuous Integration With A Test Stage
+
+version "3.9" specifies the version of the docker-compose API.
+
+services’ defines configurations applied to containers when docker-compose up is run.
+
+tooling_frontend’ specifies the name of the first service.
+
+build instructs docker-compose to build an image from Dockerfile.
+
+ports attaches port 5000 on the instance to port 80 on the container.
+
+volumes attaches a path on the host instance to containers created for the service.
+
+links connects one container to another (tooling_frontend to db in this case).
+
+db defines the database service.
+
+image specifies the image to use for the containers, if it isn't available on the instance, it is pulled from Docker Hub.
+
+restart instructs the container how frequently to restart.
+      
+environment is used to pass environment variables required for the service running in the container.
 
 
 
