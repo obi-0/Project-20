@@ -400,3 +400,61 @@ Install docker engine
     sudo apt install openjdk-11-jdk
 
 Run command below to install Jenkins 
+
+    wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+    sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
+    /etc/apt/sources.list.d/jenkins.list'
+    sudo apt-get update
+    sudo apt-get install jenkins
+
+Setup Jenkinsfile Pipeline
+
+Installed the following plugins:
+
+•	Blue Ocean
+
+•	Docker
+
+•	Docker Compose Build Step
+
+•	HTTP Request
+
+
+Create Jenkinsfile for Docker build and push to registry
+
+
+    pipeline {
+    
+    agent any
+    
+    environment {
+        dockerImage = ''
+        registry = 'obi007/docker-php-todo'
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/obi-0/docker-php-todo.git']]])
+            }
+        }
+        
+        stage('Build image') {
+            steps {
+          sh "docker build -t obi007/docker-php-todo:1.0 ."
+        }
+      }
+      stage('Push Docker image') {
+        steps {
+            withCredentials([string(credentialsId: 'docker-pwd', variable: 'DockerHubPwd')]) {
+              sh "docker login -u obi007 -p ${DockerHubPwd}"
+           }
+           sh "docker push obi007/docker-php-todo:1.0"
+   
+       }    
+      } 
+     }
+    }   
+   
+    
+
