@@ -2,7 +2,7 @@
 
 #### Install Docker and prepare for migration to the Cloud
 
-Installed Docker engine on my Ubuntu server - VirtualBox.
+Installed Docker engine on my Linux (Ubuntu) server.
 
     sudo apt-get update
 
