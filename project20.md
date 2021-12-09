@@ -232,7 +232,11 @@ Open http://localhost:8085 on web browser
        
 
 
+
 ### Implement a POC to migrate the PHP-Todo app into a containerized application.
+
+#### Part 1
+
 
 Clone the php-todo repo https://github.com/obi-0/php-todo
 
@@ -343,6 +347,7 @@ Run command to deploy containers:
 
 ![php-deploy](images/php-deploy.JPG)
 
+#### Part 2
 
 Create an account in Docker Hub
 
@@ -367,10 +372,31 @@ Pushed docker image to my dockerhub repository
 
 ![docker-push](images/docker-push.JPG)
 
-docker images in my docker hub repository
+
 
 ![docker-image](images/docker-image.JPG)
 
 
+#### Part 3
+
+1.	Write a Jenkinsfile that will simulate a Docker Build and a Docker Push to the registry
+
+2.	Connect repository to Jenkins
+3.	Create a multi-branch pipeline
+4.	Simulate a CI pipeline from a feature and master branch using previously created Jenkinsfile
+5.	Ensure that the tagged images from your Jenkinsfile have a prefix that suggests which branch the image was pushed from. 
+6.	Verify that the images pushed from the CI can be found at the registry.
 
 
+Installations:
+
+Install docker engine
+          
+    sudo apt-get update
+    sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+ Install Java runtime 
+
+    sudo apt install openjdk-11-jdk
+
+Run command below to install Jenkins 
