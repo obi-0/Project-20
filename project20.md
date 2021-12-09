@@ -602,4 +602,6 @@ Update Jenkinsfile with a test stage before pushing image to the registry.
     } 
  
    
+![tooling-pipe](images/tooling-pipe.JPG)
+
 
