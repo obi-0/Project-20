@@ -469,3 +469,44 @@ Create Jenkinsfile for Docker build and push to registry
 
 
 ![dhub-push](images/dhub-push.JPG)
+
+Deployment with Docker Compose
+
+•	Installed docker compose on Linux server
+
+•	Create a tooling.yaml file and enter the code below
+
+
+    version: "3.9"
+    services:
+    tooling_frontend:
+    build: .
+    ports:
+    - "5000:80"
+    volumes:
+    - tooling_frontend:/var/www/html
+    links:
+    - db
+    db:
+    image: mysql:5.7
+    restart: always
+    environment:
+    MYSQL_DATABASE: <The database name required by Tooling app >
+    MYSQL_USER: <The user required by Tooling app >
+    MYSQL_PASSWORD: <The password required by Tooling app >
+    MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+    - db:/var/lib/mysql
+    volumes:
+    tooling_frontend:
+    db:
+
+Run the command below to start the containers
+
+    docker-compose -f tooling.yaml  up -d 
+
+
+![toolingyml](images/toolingyml.JPG)
+
+
+
