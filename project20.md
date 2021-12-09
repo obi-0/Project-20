@@ -281,15 +281,14 @@ In the php-todo directory, write a Docker file for the php-todo app.
 
  Open the start-apache file and add the code below:
 
-composer install --no-plugins --no-scripts
+    composer install --no-plugins --no-scripts
 
-php artisan migrate
-php artisan key:generate
-php artisan db:seed
+    php artisan migrate
+    php artisan key:generate
+    php artisan db:seed
+    apache2-foreground
 
-apache2-foreground
-
-start-apache file should look like this
+'start-apache' file looks like this:
 
 ![start-apache](images/start-apache.JPG)
 
