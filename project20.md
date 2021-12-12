@@ -483,7 +483,7 @@ Set the correct permissions so that the docker-compose command is executable:
 
 
 
-•	Create a tooling.yaml file and enter the code below
+•	Create a tooling.yaml file, then enter the code below
 
 
     version: "3.9"
